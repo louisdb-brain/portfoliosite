@@ -127,6 +127,19 @@
             100%{transform: translateY(0%);}
 
         }
+        @media (max-width: 480px) {
+            @keyframes loadmove {
+                0% {
+                    transform: translateY(30%);
+                }
+                50% {
+                    transform: translateY(-5%);
+                }
+                100% {
+                    transform: translateY(0%);
+                }
+            }
+        }
         @keyframes typetitle{
             from { width: 0% }
             to { width: 11.2ch; }
