@@ -30,9 +30,9 @@
 
             transform: translateY(100%);
 
-            font-size: 1.6em;
+            font-size: 1.8em;
             font-family: ethnocentricRg;
-            letter-spacing: 2px;
+            letter-spacing: 2.1px;
             font-weight: lighter;
             text-shadow:
             0 0 5px #6ff,
@@ -69,7 +69,7 @@
             z-index: 0;
             color : rgba(255,255,255,0);
             text-shadow:
-            0 3em 20px rgba(255,255,255,0.4);
+            0 3em 20px rgba(255,255,255,0.6);
             animation-name: fadeinmain,lightflickr;
             animation-duration: 1s,  5s;
             animation-timing-function: ease-in-out, linear;
@@ -84,6 +84,11 @@
             overflow: hidden;
             white-space: nowrap;
             vertical-align: middle;
+            padding-right: .2em;
+            padding-top: .2em;
+            padding-bottom: .2em;
+            padding-left: .2em;
+
             animation: typetitle .6s steps(14, end) forwards;
 
 
@@ -127,7 +132,21 @@
             100%{transform: translateY(0%);}
 
         }
+
+        @keyframes typetitle{
+            from { width: 0% }
+            to { width: 12ch; }
+        }
+
+        /* RESPONSIVE PHONE DESIGN*/
+
         @media (max-width: 480px) {
+            .title {
+                font-size: 1.3em;
+                text-shadow:
+                        0 0 2px #6ff,
+                        0 0 4px #fff;
+            }
             @keyframes loadmove {
                 0% {
                     transform: translateY(30%);
@@ -139,10 +158,6 @@
                     transform: translateY(0%);
                 }
             }
-        }
-        @keyframes typetitle{
-            from { width: 0% }
-            to { width: 11.2ch; }
         }
         </style>
 </head>
