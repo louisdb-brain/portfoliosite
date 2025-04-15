@@ -141,8 +141,23 @@
         /* RESPONSIVE PHONE DESIGN*/
 
         @media (max-width: 480px) {
+            .animatedTitle{
+                display: inline-flex;
+                overflow: hidden;
+                white-space: nowrap;
+                vertical-align: middle;
+                padding-right: .2em;
+                padding-top: .2em;
+                padding-bottom: .2em;
+                padding-left: .2em;
+
+                animation: typetitle .6s steps(14, end) forwards;
+
+
+
+            }
             .title {
-                font-size: 1.3em;
+                font-size: 1.1em;
                 text-shadow:
                         0 0 2px #6ff,
                         0 0 4px #fff;
