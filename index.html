@@ -142,14 +142,14 @@
 
         @media (max-width: 480px) {
             .animatedTitle{
-                display: inline-flex;
+                display: inline-block;
                 overflow: hidden;
                 white-space: nowrap;
                 vertical-align: middle;
-                padding-right: .2em;
-                padding-top: .2em;
-                padding-bottom: .2em;
-                padding-left: .2em;
+                padding-right: .3em;
+                padding-top: .3em;
+                padding-bottom: .3em;
+                padding-left: .3em;
 
                 animation: typetitle .6s steps(14, end) forwards;
 
@@ -157,10 +157,15 @@
 
             }
             .title {
+
                 font-size: 1.1em;
                 text-shadow:
                         0 0 2px #6ff,
                         0 0 4px #fff;
+            }
+            @keyframes typetitle{
+                from { width: 0% }
+                to { width: 13; }
             }
             @keyframes loadmove {
                 0% {
