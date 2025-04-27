@@ -32,9 +32,11 @@ export class animatedwindow
 
     }
     draw(){
-        this.ctx.fillStyle=this.color;
+        //this.ctx.fillStyle=this.color;
         //this.ctx.fillRect(10,10,10,10);
-        this.ctx.fillRect(this.x, this.y, this.width, this.currentheight)
+        this.drawRoundedRect(this.ctx,this.x,this.y,this.width,this.height,3,this.color,"white",2,"white",this.margin);
+        //this.getCanvas().height=this.currentheight+this.margin;
+        //this.ctx.fillRect(this.x, this.y, this.width, this.currentheight)
 
 
     }
@@ -53,6 +55,38 @@ export class animatedwindow
     getCanvas()
     {
         return this.ctx.canvas;
+    }
+    drawRoundedRect(ctx, x, y, width, height, radius, fillColor, borderColor, borderWidth, shadowColor, shadowBlur) {
+    ctx.beginPath();
+    ctx.moveTo(x + radius, y);
+    ctx.lineTo(x + width - radius, y);
+    ctx.quadraticCurveTo(x + width, y, x + width, y + radius);
+    ctx.lineTo(x + width, y + height - radius);
+    ctx.quadraticCurveTo(x + width, y + height, x + width - radius, y + height);
+    ctx.lineTo(x + radius, y + height);
+    ctx.quadraticCurveTo(x, y + height, x, y + height - radius);
+    ctx.lineTo(x, y + radius);
+    ctx.quadraticCurveTo(x, y, x + radius, y);
+    ctx.closePath();
+
+    // Fill first
+    ctx.fillStyle = fillColor;
+    ctx.fill();
+
+    // Add shadow settings for the stroke
+    ctx.shadowColor = shadowColor;
+    ctx.shadowBlur = shadowBlur;
+    ctx.shadowOffsetX = 0; // You can adjust if you want
+    ctx.shadowOffsetY = 0; // You can adjust if you want
+
+    // Stroke second
+    ctx.lineWidth = borderWidth;
+    ctx.strokeStyle = borderColor;
+    ctx.stroke();
+
+    // Reset shadow settings (important, or everything after this will have shadows too!)
+    ctx.shadowColor = "transparent";
+    ctx.shadowBlur = 0;
     }
 
 

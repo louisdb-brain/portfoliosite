@@ -10,7 +10,8 @@ document.addEventListener('click', function(event) {
     clicks+=1;
     const mouseX = event.clientX; // X position inside the viewport
     const mouseY = event.clientY; // Y position inside the viewport
-    new animatedwindow(0,0,100,500,10,10,"blue",newCanvasContainter("test"+clicks,mouseX,mouseY));
+    const margin=10
+    new animatedwindow(margin,margin,100,500+margin,margin,10,"rgba(20, 20, 50, 0.1)",newCanvasContainter("test"+clicks,mouseX,mouseY));
 });
 /*
 const titles=document.querySelectorAll("h1");
@@ -80,7 +81,8 @@ function newCanvasContainter(pId,x,y)
     // Applying flex styling to the container div
     containerDiv.style.display = 'flex';
     containerDiv.style.flexWrap = 'wrap';
-    containerDiv.style.gap = '10px'; // Proper gap between items in the flex container
+    containerDiv.style.gap = '10px';
+    // Proper gap between items in the flex container
 
    /* const canvas = document.createElement('canvas');
     canvas.id = pId + '-canvas';
